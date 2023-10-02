@@ -1,4 +1,12 @@
-# from replit import clear
+import os
+ 
+def clear():  # Cross-platform clear screen
+    os.system('cls' if os.name == 'nt' else 'clear')
+# The above will not work in the PyCharm output (Run) console. Use this instead:
+
+# def clear():  # Prints 50 blank lines
+#     print("\n" * 50)
+
 from art import logo
 print(logo)
 
@@ -25,7 +33,7 @@ while not bidding_finished:
     bidding_finished = True
     find_highest_bidder(bids)
   elif should_continue == "yes":
-    # clear() replit module里面有定义clear 但是这里无法import到replit
+    clear()
   
 
 """
